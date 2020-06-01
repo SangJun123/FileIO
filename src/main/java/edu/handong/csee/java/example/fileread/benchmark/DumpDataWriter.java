@@ -17,10 +17,26 @@ public class DumpDataWriter {
     static String input10MB="input10MB.txt";
     static String input100MB="input100MB.txt";
     static String input1000MB="input1000MB.txt";
+    static String input;
+    static long size;
 
     public static void main(String[] args) throws IOException {
-        writeDumpData(input1MB, size1MB);
-        writeDumpData(input10MB, size10MB);
+    	input=args[0];
+    	if(input=="input1MB.txt") {
+    		size=size1MB;
+    	}
+    	else if(input=="input10MB.txt") {
+    		size=size10MB;
+    	}
+    	else if(input=="input100MB.txt") {
+    		size=size100MB;
+    	}
+    	else {
+    		size=size1000MB;
+    	}
+    	writeDumpData(input,size);
+        //writeDumpData(input1MB, size1MB);
+        //writeDumpData(input10MB, size10MB);
         //writeDumpData(input100MB, size100MB);
         //writeDumpData(input1000MB, size1000MB);
     }
@@ -33,5 +49,4 @@ public class DumpDataWriter {
         bufferedOutputStream.flush();
         bufferedOutputStream.close();
     }
-
 }
