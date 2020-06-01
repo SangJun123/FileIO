@@ -7,18 +7,51 @@ import java.io.*;
  */
 public class UsingBufferedReader {
     public static void main(String[] args) throws IOException {
-
-
+    
         //-------------- Test reading 1 MB file. --------------------
-    	
-    	StopWatch.start();
-        BufferedReader inputStream= new BufferedReader(new FileReader(DumpDataWriter.input));
-        while (inputStream.read()!=-1){}
+    	if (args[0].contentEquals("input1MB.txt")){
+    		StopWatch.start();
+            BufferedReader inputStream= new BufferedReader(new FileReader(DumpDataWriter.input1MB));
+            while (inputStream.read()!=-1){}
 
-        long duration = StopWatch.stop();
-        System.out.println(duration + " milsec");
-            
-        inputStream.close();
+            long duration = StopWatch.stop();
+            System.out.println(duration + " milsec");
+                
+            inputStream.close();
+    	}
+    	if(args[0].contentEquals("input10MB.txt")) {
+    		StopWatch.start();
+
+            BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input10MB));
+            while (inputStream2.read()!=-1){}
+
+            long duration2 = StopWatch.stop();
+            System.out.println(duration2 + " milsec");
+
+            inputStream2.close();
+    	}
+    	if(args[0].contentEquals("input100MB.txt")) {
+    		StopWatch.start();
+
+            BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input100MB));
+            while (inputStream2.read()!=-1){}
+
+            long duration2 = StopWatch.stop();
+            System.out.println(duration2 + " milsec");
+
+            inputStream2.close();
+    	}
+    	if(args[0].contentEquals("input1000MB.txt")) {
+    		StopWatch.start();
+
+            BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input1000MB));
+            while (inputStream2.read()!=-1){}
+
+            long duration2 = StopWatch.stop();
+            System.out.println(duration2 + " milsec");
+
+            inputStream2.close();
+    	}
     	
         
 

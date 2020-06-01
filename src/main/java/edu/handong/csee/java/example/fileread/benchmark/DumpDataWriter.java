@@ -21,21 +21,25 @@ public class DumpDataWriter {
     static long size;
 
     public static void main(String[] args) throws IOException {
-    	input=args[0];
-    	if(input=="input1MB.txt") {
+    	if(args[0]=="input1MB.txt") {
     		size=size1MB;
+    		input=args[0];
     	}
-    	else if(input=="input10MB.txt") {
+    	if(args[0]=="input10MB.txt") {
     		size=size10MB;
+    		input=args[0];
     	}
-    	else if(input=="input100MB.txt") {
+    	if(args[0]=="input100MB.txt") {
     		size=size100MB;
+    		input=args[0];
     	}
-    	else {
+    	if(args[0]=="input1000MB.txt") {
     		size=size1000MB;
+    		input=args[0];
     	}
-    	writeDumpData(input,size);
-        //writeDumpData(input1MB, size1MB);
+    	
+    	writeDumpData(args[0],size);
+    	//writeDumpData(input1MB, size1MB);
         //writeDumpData(input10MB, size10MB);
         //writeDumpData(input100MB, size100MB);
         //writeDumpData(input1000MB, size1000MB);
